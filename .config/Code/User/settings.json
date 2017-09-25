@@ -1,0 +1,44 @@
+// Coloque su configuración en este archivo para sobrescribir la configuración predeterminada.
+{
+    "todohighlight.isEnable": true, //toggle the highlight, default is true
+    "todohighlight.isCaseSensitive": true, //whether the keywords are case sensitive or not
+    "todohighlight.highlightWholeLine": false, //highlight whole line instead of keyword only
+    "todohighlight.keywords": [
+        "BUG:", // adding custom keywords without specifying the look, default color will be applied
+        "REVIEW:", //another custom keyword
+        {  
+            "text": "NOTE:", // custom text to be highlighted
+            "color": "#ff0000", // the text color, any css color identifier is valid
+            "backgroundColor": "green" // the text background color
+        },
+        {
+            "text": "HACK:",
+            "color": "#000"
+        },
+        {//this block will override the built-in keyword `TODO:` and give it new style
+            "text": "TODO:",
+            "color": "red",
+            "backgroundColor": "yellow"    
+        },
+        {
+            "text": "JAVI:",
+            "color": "black",
+            "backgroundColor": "white"
+        },
+        {
+            "text": "OJO:",
+            "color": "yellow",
+            "backgroundColor": "purple"
+        }
+    ],
+    "todohighlight.defaultStyle": { //specify the default style for custom keywords, if not specified, build in default style will be applied
+        "color": "#0000ff",
+        "backgroundColor": "yellow",
+        "overviewRulerColor": "grey"
+    },
+    "todohighlight.include": "{**/*.js,**/*.jsx,**/*.ts,**/*.html,**/*.php,**/*.css,**/*.scss}", //A glob pattern that defines the files to search for. Only include files you need, DO NOT USE `{**/*.*}` for both permormance and avoiding binary files reason
+    "todohighlight.exclude": "{**/node_modules/**,**/bower_components/**,**/dist/**,**/build/**,**/.vscode/**,**/_output/**,**/*.min.*,**/*.map}",//A glob pattern that defines files and folders to exclude while listing annotations
+    "todohighlight.maxFilesForSearch": 5120,
+    "window.zoomLevel": -2,//max files for searching, mostly you don't need to configure this
+    "terminal.integrated.shell.linux": "/bin/zsh"
+}
